@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ryo_renaudx_pogi</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+<div id="scanner-screen">
+
+  <div class="scanner-box">
+
+<img src="image/fingerprint.png" id="fingerprint" draggable="false">
+
+    <h2>security terminal</h2>
+
+    <p id="scan-status">
+      press and hold to scan
+    </p>
+
+  </div>
+
+</div>
+
+<div id="main-site" style="display:none;">
+
+<div class="top-bar">
+<header>
+  <div class="logo">469</div>
+  <div class="subtitle">archive status: unlocked</div>
+  <div class="file-id">FILE NO. RR-221B-2026</div>
+  
+</header>
+
+<nav class="menu">
+<button class="active" onclick="showSection('home', this)">home</button>
+<button onclick="showSection('about', this)">profile</button>
+<button onclick="showSection('connections', this)">affiliations</button>
+<button onclick="showSection('projects', this)">cases</button>
+<button onclick="showSection('archive_info', this)">system overview</button>
+</nav>
+
+</div>
+
+<section id="home" class="section">
+  <h1>entry log...</h1>
+
+<p id="typing-text" class="welcome"></p>
+
+</section>
+
+<section id="about" class="section hidden">
+
+  <div class="about-container">
+
+    <img src="image/profile.jpg" alt="Ryo Renaudx" class="profile-image">
+
+    <p class="quote">
+      "what’s left—even if strange or unlikely—is the answer"
+    </p>
+
+    <h2>personal dossier</h2>
+
+    <div class="info-box">
+
+      <div class="info-row"><span class="label">name</span><span class="value">ryo renaudx</span></div>
+      <div class="info-row"><span class="label">gender</span><span class="value">male</span></div>
+      <div class="info-row"><span class="label">zodiac</span><span class="value">scorpio</span></div>
+      <div class="info-row"><span class="label">mbti</span><span class="value">intp-t</span></div>
+      <div class="info-row"><span class="label">favorite color</span><span class="value">blue / darker tones</span></div>
+      <div class="info-row"><span class="label">location</span><span class="value">london, united kingdom</span></div>
+      <div class="info-row"><span class="label">workplace</span><span class="value">baker street</span></div>
+      <div class="info-row"><span class="label">occupation</span><span class="value">consulting detective</span></div>
+      <div class="info-row"><span class="label">hobbies</span><span class="value">coding</span></div>
+      <div class="info-row"><span class="label">alias</span><span class="value">vinnie hacker / rayne ames</span></div>
+
+    </div>
+
+    <h2>external access</h2>
+
+    <div class="info-box">
+
+      <div class="info-row">
+        <span class="label">facebook</span>
+        <span class="value">
+          <a href="https://www.facebook.com/renaudxryo" target="_blank">open profile</a>
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="label">status</span>
+        <span class="status-unidentified">unidentified</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="connections" class="section hidden">
+
+
+  <div id="affiliation-index" class="box-container">
+
+  <div class="box" onclick="openAffiliation('baker')">current file: 221b baker street</div>
+    <div class="box" onclick="openAffiliation('altmont charter collegium')">file: altmont charter collegium</div>
+    <div class="box" onclick="openAffiliation('inquisitio de supremacia')">file: inquisitio de supremacia</div>
+    <div class="box" onclick="openAffiliation('oubliette aristocracy')">file: oubliette aristocracy</div>
+    <div class="box" onclick="openAffiliation('joker')">file: arachnid dominion</div>
+
+  </div>
+
+  <div id="affiliation-page" class="case-page hidden">
+
+    <button class="back-btn" onclick="backToAffiliations()">← back</button>
+
+    <h2 id="affiliation-title">file</h2>
+
+    <div id="affiliation-content">
+      <p>select a file to view records...</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="projects" class="section hidden">
+
+
+  <div id="case-index" class="box-container">
+
+    <div class="box" onclick="openCase('case1')">
+      <div>
+        <strong>case file 001</strong><br>
+        renesme’s case<br>
+        status: <span class="open">open</span>
+      </div>
+    </div>
+
+    <div class="box" onclick="openCase('case2')">
+      <div>
+        <strong>case file 002</strong><br>
+        the vanishing treasure<br>
+        status: <span class="closed">closed</span>
+      </div>
+    </div>
+
+    <div class="box" onclick="openCase('case3')">
+      <div>
+        <strong>case file 003</strong><br>
+        letter from paluerza<br>
+        status: <span class="open">open</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="case1" class="case-page hidden">
+
+    <button class="back-btn" onclick="backToCases()">← back</button>
+
+    <h2>Renesme’s Case</h2>
+
+    <p>
+      Sunday, 5:30am. A janitor was about to start his cleaning routine when he suddenly noticed blood coming from the 5th floor. He rushed upstairs and discovered the victim lying on the staircase. He attempted to help, but the victim was already stiff (early rigor mortis) and unresponsive. He immediately called the police.
+    </p>
+
+    <p>
+      The victim was later identified as Renesme Sultan, an intern at the IDR department.
+    </p>
+
+    <h3>crime scene details</h3>
+    <ul>
+      <li>location: 5th floor staircase</li>
+      <li>body was found on the stairs</li>
+      <li>cause of death: massive internal bleeding and blunt force trauma from a fall resulting in fatal head injury</li>
+    </ul>
+
+    <h3>forensic findings</h3>
+    <ul>
+      <li>alcohol detected in system</li>
+      <li>diphenhydramine detected in system</li>
+    </ul>
+
+    <h3>suspects</h3>
+
+    <p><strong>Kate Lamenz</strong><br>
+    intern / not close to the victim</p>
+    <p>
+      “I lost interest in continuing the drinking session because Renesme was focused on her laptop. She was too hardworking and many interns found it irritating. I left around 10:30pm.”
+    </p>
+
+    <p><strong>Rain Espinoza</strong><br>
+    intern / acquaintance</p>
+    <p>
+      “I went home around 9pm because I felt unwell. I told her I was leaving but she didn’t respond. I left my phone in the office.”
+    </p>
+
+    <p><strong>Raven Tirzo</strong><br>
+    close friend</p>
+    <p>
+      “We were supposed to leave together, but she stayed. I heard someone enter. when I woke up, everyone was gone and her laptop was still open. I left at 11:11pm.”
+    </p>
+
+    <h3>additional information</h3>
+    <ul>
+      <li>Rain Espinoza’s phone found inside office</li>
+      <li>alcohol glass recovered</li>
+      <li>shrimp shells and leftovers found in trash bin</li>
+      <li>laptop left open at 90° angle</li>
+      <li>active document still displayed</li>
+    </ul>
+
+    <p>
+      The gathering was confirmed to be a drinking session after work hours.
+    </p>
+
+    <p>
+      From there, the detective pieced together what truly happened.
+    </p>
+
+    <p class="more-info">
+      for more info, visit this:
+      <a href="https://www.facebook.com/renaudxryo/posts/pfbid023icFDoi2jXqnrmg1qvF6QP4yY8EZTBZmyneWapF548vaJY6ip5BgzbH4VJzsY8ddl" target="_blank">
+        view full record
+      </a>
+    </p>
+
+  </div>
+
+  <div id="case2" class="case-page hidden">
+
+    <button class="back-btn" onclick="backToCases()">← back</button>
+
+    <h2>The Vanishing Treasure of Holmes’ Lair</h2>
+
+    <p>
+      Inside a hidden chamber known as holmes’ lair, a valuable treasure was securely kept. The room had only one entrance, guarded and locked from the inside. No signs of forced entry were found.
+    </p>
+
+    <p>
+      At exactly 11:00pm, the treasure was confirmed to be inside the vault. By 11:30pm, it had completely disappeared.
+    </p>
+
+    <h3>suspects present</h3>
+    <ul>
+      <li>Jun — sergeant 4</li>
+      <li>Mar — sergeant 5</li>
+      <li>May — sergeant 9</li>
+      <li>Jan — sergeant 10</li>
+    </ul>
+
+    <h3>next morning</h3>
+    <ul>
+      <li>a note was found inside the empty vault</li>
+      <li>handwriting was steady and deliberate</li>
+      <li>no fingerprints were recovered</li>
+    </ul>
+
+    <h3>the note</h3>
+    <p>
+      .... --. ..../.... .-. .---/.... .-. .---/.- --. ..-/-.-. --. ./- -.-- --.-/.. . -
+    </p>
+
+    <p class="more-info">
+      for more info, visit this:
+      <a href="https://www.facebook.com/renaudxryo/posts/pfbid026xLjhRjiSSBYrxjtZVKbbq1owYgncLwEPPQD9gytpuC6HQrbE8AjFQY9yphUseyWl" target="_blank"> view full record</a>
+    </p>
+
+  </div>
+
+<div id="case3" class="case-page hidden">
+
+  <button class="back-btn" onclick="backToCases()">← back</button>
+
+  <h2>Letter from Paluerza</h2>
+
+  <p>
+    Ten years ago, <strong>Romano Aleksandro</strong>, aged 73, was found guilty of being the serial killer behind a string of murders that terrorized the village of Paluerza. The verdict shocked the entire community. Despite his kind demeanor and gentle appearance, Romano was revealed to be the mastermind behind the killings that had plagued the village for years.
+  </p>
+
+  <h3>present day</h3>
+
+  <p>
+    A group of workers was assigned to clean and renovate an old house that once belonged to Don Romano Aleksandro. As they were removing furniture from the property, one of the workers attempted to lift a <span class="hidden-clue" onclick="openSofa()">red</span> sofa. Suddenly, an envelope slipped from beneath it and fell to the floor.
+  </p>
+
+  <p>
+    Romano's name remained infamous throughout <span class="hidden-clue" onclick="openPaluerza()">Paluerza</span>. Even after a decade, people still speculated about the reasons behind his crimes. Unfortunately, those questions were never answered. Only a few days after his arrest, Romano passed away, taking his secrets with him.
+  </p>
+
+  <h3>additional information</h3>
+
+  <ul>
+    <li>Romano Aleksandro died only days after his conviction</li>
+    <li>no motive was ever officially established</li>
+    <li>his grandson, Caesar Aleksandro, disappeared from public view shortly afterward</li>
+    <li>local rumors claim Caesar was taken to South Carolina by relatives</li>
+    <li>the discovered envelope was immediately surrendered to authorities</li>
+  </ul>
+
+  <h3>recovered document</h3>
+
+  <p>
+    Inside the envelope was a single sheet of paper believed to have been written by Romano himself.
+  </p>
+
+  <p>
+    Investigators could not immediately determine whether it was truly a letter, as the page contained what appeared to be a series of random letters and symbols rather than a coherent message. Despite this, authorities believed the contents were intentional and likely concealed a deeper meaning.
+  </p>
+
+  <h3>the letter</h3>
+
+  <div class="evidence-letter">
+To whoever finds this letter,
+
+jnp dtxhtdv eb xz guyh ui dfgtzz qnuhivo wkkxqezx ts onz xtdjbkg xnxcfkedr guo hvall. yfokn idvhmymke, dwykr tzzdzgtkjsho, ana ofkeg pjtkustsqz koieudfg oce tgdaqi ec zdtq ii wuyazl guo pnclqjc jjt qdqn icqqte. hyh wukj bqpzlkubd kx hjzn yxzt. monxkd ajz yqpdgz yjkzv br awxoms byq htembtmy ioxeke. tanc jjqt bapqoa at n gmoxhke, nfz t egtb nrotw hfdl k yohnn odajtdv eb. dwyo dnp, n ban tejgnsq guotv snoyi tukidwyk yoybyqj wcan nm rsimnqtoqz. t ntzu xy yowzvbnkntdv fhi qiiiqn sdaj ibkkdez ipcog horsoykn gdelqo. pycl ex hjza idwyk zzukxsya jnp qukna wukw lbfqr eked. fm jenril ex tdfkclkujwtyi befqp uuzd djzbjvte ytze yye ilih jjxgdfya. coit mxhmixehs ymng kyhl, ytzzz pdm fyfok uig fyzp yye dwsaooit. lly pcpkil ytzr akrxrya i euc zxsqwc, sod byiw wkrngy tdzqnlavqo. hftoq si y xkelaso lzualt so tjsryknv bzyguq wndfeibq guopttuwyi cy u kxq. tnt lrnbipc wukw nniopnzte byjxnz ns qcxjjzpd pmk mnasrbg. zuzvw nowgxjsnrf mofc tboqnvwukidr guotv rdbgjiosw. vqymiog byqsk yhstsysnd yyrkzya co at iah ivkxexzsokqn tnzb. t xnatlkozx eyieqj ejzsodb ior nj byqo zuzv fkqhhinzte vtjw hftg vyko iktxfu. qihskd ryhytbc iqjz cfkeuemroa lnmgsixzl ho pmkknsbdf. 
+
+ojvvfdahy, kojbkg.
+
+qezd oyy, nz s eztst llyio eyeez, s rdnp byqb eiqb idwyk voltozgjda. vttqowok sony guo hvall si cysts nfkizl qdfyjwu sod zgnzc xtrdpz entb ianh wn htukyfo.
+
+nzt cknjf kkfkqhh lzjhoq s je vyid. kx hjzvt xz hhiqb dst qtdaztmz pznh ei llsi tnvke, yiro xued ex pr vvdsrhnd. uec saoz ii iddzik.
+
+-	Romano Aleksandro
+
+  </div>
+
+
+</div>
+
+
+</section>
+
+<section id="archive_info" class="section hidden">
+
+ <div class="archive-letter">
+
+<h1>MEMORANDUM</h1>
+
+<p>
+  <strong>Subject:</strong> System Overview
+</p>
+
+<p>
+  To Whom It May Concern,
+</p>
+
+<p>
+  This statement applies to all records, case files, affiliations, and related content contained within this website, which are intended for roleplay (RPW) purposes only and do not represent the author’s real-life identity, events, or associations. Any similarity to real persons or situations is purely coincidental.
+</p>
+
+<p>
+  This website is maintained as a personal record system by the undersigned consulting detective. Its purpose is to organize and preserve investigative cases, affiliations, and other materials relevant to personal portfolio and creative interests.
+</p>
+
+<p>
+  All records, images, and case files presented within this website have been intentionally created and included by the owner for documentation and presentation purposes. No unauthorized data collection is conducted, and nothing contained herein is intended to represent official or real-world investigative evidence unless explicitly stated.
+</p>
+
+<p>
+  The contents of this website are to be regarded as personal records, creative investigations, and archived references maintained for organizational purposes.
+</p>
+
+<p>
+  <span class="alert">Furthermore, this system operates independently and is not affiliated with any <strong>law enforcement agency</strong>, <strong>investigative bureau</strong>, <strong>governmental institution</strong>, or <strong>private organization</strong></span>.
+</p>
+
+<p>
+  This website, including its structure, design, case presentations, and archive format, was independently created and developed by me, Ryo Renaudx. All content is provided strictly for viewing and personal reference purposes only. <span class="alert">Unauthorized copying, reproduction, redistribution, or use of any material or ideas presented within this site is strongly discouraged. All materials remain the intellectual creation of the author</span>.
+</p>
+
+<p>
+  Respectfully Filed,
+</p>
+
+<div class="signature-block">
+    <img src="image/sig.png" alt="Fingerprint" class="fingerprint-signature">
+
+    <p class="fp-label">biometric signature verified</p>
+
+    <p>
+        <strong>Ryo Renaudx</strong><br>
+        Consulting Detective
+    </p>
+</div>
+
+</section>
+</section>
+
+
+<script src="script.js"></script>
+
+</div>
+</body>
+</html>
